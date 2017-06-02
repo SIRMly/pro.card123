@@ -1,0 +1,181 @@
+@charset "utf-8";
+html{
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+.page{position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+#loading{width: 33.7%; position: absolute; left: 33.15%; top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);}
+/*==page1==*/
+.page1{background: url("../img/page1-bg.jpg") no-repeat bottom center; background-size: cover;}
+#page1-word{width: 58.27vw; height: 56.93vw; margin: 35% auto 0; background: url("../img/page1-word.png") no-repeat center center;
+    -webkit-background-size: contain;
+    background-size: contain;}
+#page1-notice{width: 21vw; height: 24.13vw; position: absolute; top: 0; right: 1%; background: url("../img/page1-notice.png") no-repeat center center;
+    -webkit-background-size: contain;
+    background-size: contain;}
+#page1-btn{width: 62.5%; height: 24.3vw; position: absolute; left: 18.75%; bottom: 4%; background: url("../img/page1-btn.png") no-repeat center center;
+    -webkit-background-size: contain;
+    background-size: contain;}
+#page1-state{background-color: rgba(0,0,0,0.7); padding: 20% 0 0 5%;}
+#close-page1-btn{font-size: 3rem; position: absolute; right: 0.2rem; top: 0.2rem; color: #fff;}
+/*==page2==*/
+.bg{background: url("../img/bg.jpg") no-repeat bottom center;
+    -webkit-background-size: cover;
+    background-size: cover;}
+.head{width: 26.1%; height: 26.4vw; background: url("../img/head.png") no-repeat;
+    -webkit-background-size:  100% 100%;
+    background-size: 100% 100%; text-align: center; font-size: 0; padding: 3.6% 0;}
+.head img{border-radius: 50%; width: 61.2%;}
+.time-wrapper{width: 42%; height: 29.2vw; font-size: 10vw; text-align: center; padding-top: 13%; position: absolute; top: 0; left: 29%; background: url("../img/timer-bg.png") no-repeat center center;
+    -webkit-background-size: contain;
+    background-size: contain;}
+#main{width: calc(86.4vw + 16px); margin: 10vh auto 0;}
+.row{display: flex; margin: 5px 0;}
+.box{width: 21.6vw; height: 21.6vw; border-radius: 50%; overflow: hidden;  margin: 0 2px; }
+.card{width: 100%; height: 100%; margin: auto; border-radius: 50%;}
+.cardRotate{
+    -webkit-animation: cardRotate 0.4s ease 0s 1 forwards;
+    -o-animation: cardRotate 0.4s ease 0s 1 forwards;
+    animation: cardRotate 0.4s ease 0s 1 forwards;
+}
+@keyframes cardRotate {
+    from{width: 0; height: 0;}
+    to{width: 100%; height: 100%;
+        -webkit-transform: rotate(-360deg);
+        -moz-transform: rotate(-360deg);
+        -ms-transform: rotate(-360deg);
+        -o-transform: rotate(-360deg);
+        transform: rotate(-360deg); }
+}
+.cardRotateBack{
+    -webkit-animation: cardRotateBack 0.4s ease 0s 1 forwards;
+    -o-animation: cardRotateBack 0.4s ease 0s 1 forwards;
+    animation: cardRotateBack 0.4s ease 0s 1 forwards;
+}
+@keyframes cardRotateBack {
+    from{}
+    to{width: 0; height: 0;
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);}
+}
+
+.pic{width: 100%; height: 100%; background: url("../img/pic.png"); opacity: 0.2;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%; border-radius: 50%;
+    -webkit-transition: transform 0.2s;
+    -moz-transition: transform 0.2s;
+    -ms-transition: transform 0.2s;
+    -o-transition: transform 0.2s;
+    transition: transform 0.2s;}
+.trans{
+    -webkit-transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    -o-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+}
+/*==失败成功==*/
+#crashes{background: rgba(0,0,0,0.5) url("../img/crash-bg.png") no-repeat bottom center;
+    -webkit-background-size: contain;
+    background-size: contain;}
+#success{text-align: center; position: absolute; width: 100%; bottom: 17%;}
+.success-head{width: 25%; height: 25vw; border: 3px solid #bf8146; border-radius: 50%;}
+#success-flag{width: 44%; height: 16.4vw; background: url("../img/success-flag.png") no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%; margin: 1% auto 0; }
+#success-word{color: #643b26; font-weight: bolder;}
+.success-1{font-size: 4vw;}
+.success-1:nth-child(2){margin-bottom: 1%;}
+.success-2{font-size: 3.5vw;}
+.success-3{font-size: 4vw; margin-top: 1%;}
+.big-btn{width: 58.3%; height: 16.1vw;}
+#reward-btn{ margin: 3% auto 2%; background: url("../img/reward-btn.png") no-repeat center center;
+    -webkit-background-size: contain;
+    background-size: contain;}
+.crash-btns{width: 58.3%; margin: 0 auto;}
+.crash-btn{width: 48.9%; height: 12.9vw; }
+#rank-btn{background: url("../img/rank-btn.png") no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;}
+#again-btn{background: url("../img/again-btn.png") no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;}
+/*==fail==*/
+#fail{position: absolute; width: 100%; bottom: 17%;}
+#fail-flag{width: 60vw; height: 57vw; margin: 0 auto; text-align: center;}
+#continue-btn{background: url("../img/continue-btn.png") no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;}
+#home-btn{background: url("../img/home-btn.png") no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;}
+#concern-btn{background: url("../img/concern-btn.png") no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%; margin: 3% auto 2%;}
+/*==排行榜 说明==*/
+#explain{background-color: rgba(0,0,0,0.7); color: #ffffff; padding: 0 0.4rem;}
+#explain a{color: #fff; width: 100%; display: inline-block;}
+#rank-wrapper{width: 100%; height: 100%; overflow-y: scroll; font-size: 0.95rem; padding-top: 3%;}
+#close{font-size: 3rem; position: absolute; right: 0; top: 0.2rem;}
+#tabs ul{width: 100%; border-bottom: 1px solid #fff;}
+.tab{float: left; width: 30%; text-align: center; padding: 1.1rem 0 0.9rem; position: relative;}
+.tab+.tab a{border-left: 1px solid #fff;}
+.tab.active:before{position: absolute; width: 70%; content: ""; left: 15%; bottom: 0; height: 0; border: 1px solid #fff;}
+.tab.active:after{position: absolute; content: ""; width: 0; height: 0; left: 50%; margin-left: -6px; bottom: 0;  border: 6px solid transparent; border-color: transparent transparent #fff transparent;}
+#state{margin-top: 35%;}
+
+#list-wrapper > p{margin: 1rem 0 0.2rem 0.5rem;}
+#list-wrapper > table{width: 100%; text-align: center; vertical-align: middle;}
+#list-wrapper thead tr{height: 10vw;}
+#list-wrapper tbody tr{border-bottom: 1px solid #fff;height: 13vw;}
+#list-wrapper img{width: 10vw;}
+
+#rewards-wrapper{padding: 1rem 0 1rem 1rem;}
+#rewards-wrapper p{height: 1.5rem; line-height: 1.5rem;}
+
+
+
+
+
+
+
+
+
+
+
+
+    /*==排行榜==*/
+#rank-close{position: absolute; right: 0; top: -5px; font-size: 60px; }
+#rank-table{width: 100%; text-align: center; color: #fff; }
+#rank-table th{height: 40px; line-height: 40px;}
+.rank-header{width: 14vw; height:14vw; border-radius: 50%;}
+/*==横屏时提示==*/
+@-webkit-keyframes rotation {
+    10% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+    50%, 60% { transform: rotate(0deg); -webkit-transform: rotate(0deg) }
+    90% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+    100% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+}
+@keyframes rotation {
+    10% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+    50%, 60% { transform: rotate(0deg); -webkit-transform: rotate(0deg) }
+    90% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+    100% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+}
+#orientLayer { display: none }
+@media screen and (min-aspect-ratio: 13/9) {
+    #orientLayer { display: block }
+}
+.mod-orient-layer { display: none; position: fixed; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; background: #000; z-index: 9997 }
+.mod-orient-layer__content { position: absolute; width: 100%; top: 45%; margin-top: -75px; text-align: center }
+.mod-orient-layer__icon-orient { background-image: url('../img/crossWarning.png'); display: inline-block; width: 67px; height: 109px; transform: rotate(90deg); -webkit-transform: rotate(90deg); -webkit-animation: rotation infinite 1.5s ease-in-out; animation: rotation infinite 1.5s ease-in-out; -webkit-background-size: 67px; background-size: 67px }
+.mod-orient-layer__desc { margin-top: 20px; font-size: 15px; color: #fff }

@@ -1,0 +1,244 @@
+    <!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="author" content="SIRMly">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/game.css">
+    <title>GAME</title>
+</head>
+<body>
+<div class="page bg" id="progress">
+    <img src="img/loading.gif" alt="" id="loading"/>
+</div>
+<div class="page page1 hide">
+    <div id="page1-word"></div>
+    <div id="page1-notice"></div>
+    <div id="page1-btn"></div>
+    <div class="page hide" id="page1-state">
+        <div id="close-page1-btn">×</div>
+        <img src="img/state.png" alt="" width="90%"/>
+    </div>
+</div>
+<div class="page page2 bg hide" id="game-center">
+    <div class="head">
+        <img src="img/2.png" alt="" id=""/>
+    </div>
+    <div class="time-wrapper">
+        <div class="title-time">60.0s</div>
+    </div>
+    <div id="main">
+        <div class="row">
+            <div class="box">
+                <div class="card">
+                    <div class="pic"></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="card">
+                    <div class="pic"></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="card">
+                    <div class="pic"></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="card">
+                    <div class="pic"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="box">
+                <div class="card">
+                    <div class="pic"></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="card">
+                    <div class="pic"></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="card">
+                    <div class="pic"></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="card">
+                    <div class="pic"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="box">
+                <div class="card">
+                    <div class="pic"></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="card">
+                    <div class="pic"></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="card">
+                    <div class="pic"></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="card">
+                    <div class="pic"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="box">
+                <div class="card">
+                    <div class="pic"></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="card">
+                    <div class="pic"></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="card">
+                    <div class="pic"></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="card">
+                    <div class="pic"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="crashes" class="page">
+        <div id="success" class="hide">
+            <img src="img/1.png" alt="" class="success-head"/>
+            <div id="success-flag"></div>
+            <div id="success-word">
+                <p class="success-1">你的成绩为:<span id="yourTime">22.6</span>秒</p>
+                <p class="success-1">成功击败全国<span id="yourRank">83</span>%的玩家</p>
+                <p class="success-2">最佳成绩为: <span id="bestTime">17</span>秒</p>
+                <p class="success-2">最佳排名为: NO.<span id="bestRank">4</span></p>
+                <p class="success-3">已累计获得 <span id="money">100</span> 元</p>
+            </div>
+            <div id="reward-btn" class="big-btn"></div>
+            <div class="crash-btns clearfix">
+                <div id="rank-btn" class="crash-btn explain-btn pull-left"></div>
+                <div id="again-btn" class="crash-btn again-btns pull-right"></div>
+            </div>
+        </div>
+        <div id="fail" class="hide">
+            <div id="fail-flag">
+                <img src="img/fail-flag.png" alt="" id="fail-img" width="80%"/>
+            </div>
+            <div class="crash-btns clearfix">
+                <div id="continue-btn" class="crash-btn again-btns pull-left"></div>
+                <div id="home-btn" class="crash-btn pull-right"></div>
+            </div>
+            <div id="concern-btn" class="big-btn"></div>
+        </div>
+    </div>
+</div>
+<div class="page hide" id="explain">
+    <div id="rank-wrapper">
+        <div id="close">×</div>
+        <div id="tabs">
+            <ul class="clearfix">
+                <li class="tab active">
+                    <a href="javascript:;">活动说明</a>
+                </li>
+                <li class="tab">
+                    <a href="javascript:;">排行榜</a>
+                </li>
+                <li class="tab">
+                    <a href="javascript:;">我的奖品</a>
+                </li>
+            </ul>
+            <div class="tab-show" id="state-wrapper">
+                <img src="img/state.png" alt="" width="82%" id="state"/>
+            </div>
+            <div class="tab-show hide" id="list-wrapper">
+                <p>当前排名: <span id="bestRank2">3</span>位(只显示前100名)</p>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>排行</th>
+                        <th>头像</th>
+                        <th>昵称</th>
+                        <th>成绩</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>NO.1</td>
+                        <td>
+                            <img src="img/2.png" alt=""/>
+                        </td>
+                        <td>饿哦是谁</td>
+                        <td>12.9秒</td>
+                    </tr>
+                    <tr>
+                        <td>NO.1</td>
+                        <td>
+                            <img src="img/2.png" alt=""/>
+                        </td>
+                        <td>饿哦是谁</td>
+                        <td>12.9秒</td>
+                    </tr>
+                    <tr>
+                        <td>NO.1</td>
+                        <td>
+                            <img src="img/2.png" alt=""/>
+                        </td>
+                        <td>饿哦是谁</td>
+                        <td>12.9秒</td>
+                    </tr>
+                    <tr>
+                        <td>NO.1</td>
+                        <td>
+                            <img src="img/2.png" alt=""/>
+                        </td>
+                        <td>饿哦是谁</td>
+                        <td>12.9秒</td>
+                    </tr>
+                    <tr>
+                        <td>NO.1</td>
+                        <td>
+                            <img src="img/2.png" alt=""/>
+                        </td>
+                        <td>饿哦是谁</td>
+                        <td>12.9秒</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-show hide" id="rewards-wrapper">
+                <p>我的奖品1</p>
+                <p>我的奖品2</p>
+                <p>我的奖品3</p>
+                <p>我的奖品4</p>
+                <p>我的奖品5</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="orientLayer" class="mod-orient-layer">
+    <div class="mod-orient-layer__content">
+        <i class="icon mod-orient-layer__icon-orient"></i>
+        <div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
