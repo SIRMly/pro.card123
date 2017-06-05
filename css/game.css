@@ -13,9 +13,24 @@ html{
     transform: translateY(-50%);}
 /*==page1==*/
 .page1{background: url("../img/page1-bg.jpg") no-repeat bottom center; background-size: cover;}
-#page1-word{width: 58.27vw; height: 56.93vw; margin: 20% auto 0; background: url("../img/page1-word.png") no-repeat center center;
+#page1-word{width: 20vw; height: 19.5vw;
+    background: url("../img/page1-word.png") no-repeat center center;
     -webkit-background-size: contain;
-    background-size: contain;}
+    background-size: contain;
+    position: absolute; top: 30%;left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-animation: page1wordMove 0.8s linear 0s 1 forwards;
+    -o-animation: page1wordMove 0.8s linear 0s 1 forwards;
+    animation: page1wordMove 0.8s linear 0s 1 forwards;}
+@keyframes page1wordMove {
+    0%{}
+    50%{width: 65vw; height: 63.5vw;}
+    100%{width: 58.27vw; height: 56.93vw;}
+}
 #page1-notice{width: 21vw; height: 24.13vw; position: absolute; top: 0; right: 1%; background: url("../img/page1-notice.png") no-repeat center center;
     -webkit-background-size: contain;
     background-size: contain;}
