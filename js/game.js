@@ -57,6 +57,13 @@ $(function(){
     }
     var tab = $(".tab"),
         tabShow = $(".tab-show");
+    tab.each(function (index,item){
+        $(this).on(click, function (){
+            $(this).addClass("active").siblings(".tab").removeClass("active");
+            tabShow.eq(index).siblings(".tab-show").addClass("hide");
+            tabShow.eq(index).removeClass("hide");
+        });
+    });
     var startBtn = $("#page1-btn"),
         againBtn = $(".again-btns"),
         explainBtn  = $(".explain-btn"),
@@ -75,39 +82,44 @@ $(function(){
         game.init();
     });
     explainBtn.on(click, function (){
-       $("#explain").removeClass("hide");
+       $("#explain").removeClass("hide").stop().animate({
+            width : "100%",
+            height : "100%"
+        },300);
     });
     explainClose.on(click, function (){
-       $("#explain").addClass("hide");
+        $("#explain").stop().animate({
+            width : "0",
+            height : "0"
+        },300, function (){
+            $("#explain").addClass("hide");
+        });
     });
     page1Explain.on(click, function (){
-       $("#page1-state").removeClass("hide");
+       $("#page1-state").removeClass("hide").stop().animate({
+           width : "100%",
+           height : "100%"
+       },300);
     });
     page1Close.on(click, function (){
-       $("#page1-state").addClass("hide");
+        $("#page1-state").stop().animate({
+            width : "0",
+            height : "0"
+        },300, function (){
+            $("#page1-state").addClass("hide");
+        });
     });
     rewardBtn.on(click, function (){
         $("#success").addClass("hide");
-        $("#fail-img").attr({
-            "src":"img/reward1.png",
-            "width" : "100%"
-        });
         $("#fail").removeClass("hide");
-    });
-    tab.each(function (index,item){
-        $(this).on(click, function (){
-            tabShow.eq(index).siblings(".tab-show").addClass("hide");
-            tabShow.eq(index).removeClass("hide");
-        });
     });
     homeBtn.on(click, function (){
         pages.addClass("hide");
         $("#crash,#crashes>div").addClass("hide");
         $(".page1").removeClass("hide");
+        $(".card").removeClass("cardRotate");
+        $(".card").removeClass("cardRotateBack");
     });
-
-
-
     var game = {
         init : function () {
             $("#crashes,#crashes>div").addClass("hide");
@@ -119,6 +131,7 @@ $(function(){
             this.successNum = 0;
             this.time = 300;
             this.timeText = "60.0s";
+            this.winTime = 0;
             this.gameOn();
             this.timeBox.html(this.timeText);
         },
@@ -184,10 +197,28 @@ $(function(){
                             game.box1.addClass("cardRotateBack");
                             game.box2.addClass("cardRotateBack");
                             game.successNum++;
+                            /*==全部对==*/
                             if(game.successNum==game.doubleNum){
                                 clearInterval(game.timer);
                                 setTimeout(function (){
                                     $("#crashes,#success").removeClass("hide");
+                                    game.winTime = 600-game.time;
+                                    if(game.winTime<=100){
+                                        $("#fail-img").attr({
+                                            "src":"img/reward1.png",
+                                            "width" : "100%"
+                                        });
+                                    }else if (game.winTime<=200){
+                                        $("#fail-img").attr({
+                                            "src":"img/reward1.png",
+                                            "width" : "100%"
+                                        });
+                                    }else {
+                                        $("#fail-img").attr({
+                                            "src":"img/reward1.png",
+                                            "width" : "100%"
+                                        });
+                                    }
                                     $("#yourTime").text((600-game.time)/10+"s");
                                 },500);
                             }
@@ -208,9 +239,10 @@ $(function(){
                     game.gameText = Math.floor(game.time/10)+ "." + Math.floor(game.time%10) + "s";
                     game.timeBox.html(game.gameText);
                 } else{
+                    /*==超时==*/
                     clearInterval(game.timer);
                     $("#fail-img").attr({
-                        "src":"img/fail-img.png",
+                        "src":"img/fail-flag.png",
                         "width" : "80%"
                     });
                     $("#crashes,#fail").removeClass("hide");
