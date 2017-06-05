@@ -19,13 +19,9 @@ html{
     background-size: contain;
     position: absolute; top: 30%;left: 50%;
     -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    -webkit-animation: page1wordMove 0.8s linear 0s 1 forwards;
-    -o-animation: page1wordMove 0.8s linear 0s 1 forwards;
-    animation: page1wordMove 0.8s linear 0s 1 forwards;}
+    -webkit-animation: page1wordMove 0.5s linear 0s 1 forwards;
+    animation: page1wordMove 0.5s linear 0s 1 forwards;}
 @keyframes page1wordMove {
     0%{}
     50%{width: 65vw; height: 63.5vw;}
@@ -36,7 +32,18 @@ html{
     background-size: contain;}
 #page1-btn{width: 62.5%; height: 24.3vw; position: absolute; left: 18.75%; bottom: 4%; background: url("../img/page1-btn.png") no-repeat center center;
     -webkit-background-size: contain;
-    background-size: contain;}
+    background-size: contain;
+    -webkit-animation: page1BtnMove 0.5s linear 0.5s 1 forwards;
+    animation: page1BtnMove 0.5s linear 0.5s 1 forwards;
+}
+@keyframes page1BtnMove {
+    0%{}
+    20%{-webkit-transform: rotate(6deg);transform: rotate(6deg);}
+    40%{-webkit-transform: rotate(-6deg);transform: rotate(-6deg);}
+    60%{-webkit-transform: rotate(6deg);transform: rotate(6deg);}
+    80%{-webkit-transform: rotate(-6deg);transform: rotate(-6deg);}
+    100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+}
 #page1-state{width: 0; height: 0; right: 0; left: auto;  background-color: rgba(0,0,0,0.7); padding: 20% 0 0 5%;}
 #close-page1-btn{font-size: 3rem; position: absolute; right: 0.2rem; top: 0.2rem; color: #fff;}
 /*==page2==*/
