@@ -145,11 +145,12 @@ html{
     background-size: 100% 100%; margin: 3% auto 2%;}
 /*==排行榜 说明==*/
 #explain{width: 0; height: 0; background-color: rgba(0,0,0,0.7); color: #ffffff; padding: 0 0.4rem; right: 0; left: auto;  overflow: hidden; }
+/*#explain{width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); color: #ffffff; padding: 0 0.4rem; right: 0; left: auto;  overflow: hidden; }*/
 #explain a{color: #fff; width: 100%; display: inline-block;}
 #rank-wrapper{width: 100%; height: 100%; overflow-y: scroll; font-size: 0.95rem; padding-top: 3%;}
 #tabs{position: relative;}
-#close{font-size: 3rem; position: absolute; right: 0; top: -0.5rem;}
-#tabs ul{width: 100vw; border-bottom: 1px solid #fff;}
+#close{font-size: 3rem; position: absolute; right: 0; top: -0.4rem;}
+#tabs ul{width: 100%; border-bottom: 1px solid #fff;}
 .tab{float: left; width: 30%; text-align: center; padding: 1.1rem 0 0.9rem; position: relative;}
 .tab+.tab a{border-left: 1px solid #fff;}
 .tab.active:before{position: absolute; width: 70%; content: ""; left: 15%; bottom: 0; height: 0; border: 1px solid #fff;}
@@ -162,8 +163,14 @@ html{
 #list-wrapper tbody tr{border-bottom: 1px solid #fff;height: 13vw;}
 #list-wrapper img{width: 10vw;}
 
-#rewards-wrapper{padding: 1rem 0 1rem 1rem;}
-#rewards-wrapper p{height: 1.5rem; line-height: 1.5rem;}
+.ticket{border: 3px solid #fff; width: 94%; margin: 1.5rem auto 0; border-radius: 6px; overflow: hidden; position: relative;}
+.ticket-link{display: block; font-weight: normal; border-bottom: 1px dashed #fff; padding: 1.2rem 0.8rem 1.2rem 1rem;}
+.link-big{font-size: 1.5rem;}
+.link-middle{font-size: 1rem; margin-top: 1rem;}
+.link-icon{width: 2.5rem; height: 2.5rem; position: absolute; right: 0; top: 2rem; background: url("../img/arrow.png") no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%; }
+.ticket-p{padding: 0 1rem; height: 2.2rem; line-height: 2.2rem; color: #d87603;}
 
 
 
@@ -176,11 +183,10 @@ html{
 
 
 
-    /*==排行榜==*/
-#rank-close{position: absolute; right: 0; top: -5px; font-size: 60px; }
-#rank-table{width: 100%; text-align: center; color: #fff; }
-#rank-table th{height: 40px; line-height: 40px;}
-.rank-header{width: 14vw; height:14vw; border-radius: 50%;}
+
+
+
+
 /*==横屏时提示==*/
 @-webkit-keyframes rotation {
     10% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }

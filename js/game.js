@@ -45,7 +45,6 @@ $(function(){
         for(var i in imgs){
             var newImg = new Image();
             newImg.src = imgs[i];
-            console.log( newImg.src);
             newImg.onload = function (){
                 proNum++;
                 if(proNum>=count){
@@ -159,7 +158,6 @@ $(function(){
                 this.pics.eq(i).attr("data-num",cardArray[i]);
             }
             /*==图片添加完成==*/
-            //$("#crashes,#crashes>div").addClass("hide");
             $("#game-center").removeClass("hide");
             this.cards.addClass("cardRotate");
             this.pics.addClass("trans");
