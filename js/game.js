@@ -17,6 +17,7 @@ $(function(){
         "img/6.png",
         "img/7.png",
         "img/again-btn.png",
+        "img/arrow.png",
         "img/concern-btn.png",
         "img/continue-btn.png",
         "img/crash-bg.png",

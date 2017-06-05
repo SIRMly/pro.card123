@@ -155,7 +155,7 @@ html{
 .tab+.tab a{border-left: 1px solid #fff;}
 .tab.active:before{position: absolute; width: 70%; content: ""; left: 15%; bottom: 0; height: 0; border: 1px solid #fff;}
 .tab.active:after{position: absolute; content: ""; width: 0; height: 0; left: 50%; margin-left: -6px; bottom: 0;  border: 6px solid transparent; border-color: transparent transparent #fff transparent;}
-#state{margin-top: 20%;}
+#state{margin-top: 12%;}
 #state{width: 82vw;}
 #list-wrapper > p{margin: 1rem 0 0.2rem 0.5rem;}
 #list-wrapper > table{width: 100vw; text-align: center; vertical-align: middle;}
