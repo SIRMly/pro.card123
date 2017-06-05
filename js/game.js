@@ -129,7 +129,7 @@ $(function(){
             this.pics.off(click);
             this.eachNum = 0;
             this.successNum = 0;
-            this.time = 300;
+            this.time = 600;
             this.timeText = "60.0s";
             this.winTime = 0;
             this.gameOn();
