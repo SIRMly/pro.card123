@@ -148,7 +148,7 @@ html{
 #explain a{color: #fff; width: 100%; display: inline-block;}
 #rank-wrapper{width: 100%; height: 100%; overflow-y: scroll; font-size: 0.95rem; padding-top: 3%;}
 #tabs{position: relative;}
-#close{font-size: 3rem; position: absolute; right: 0; top: -0.5rem;}
+#close{font-size: 3rem; position: absolute; right: 0; top: -0.4rem;}
 #tabs ul{width: 100%; border-bottom: 1px solid #fff;}
 .tab{float: left; width: 30%; text-align: center; padding: 1.1rem 0 0.9rem; position: relative;}
 .tab+.tab a{border-left: 1px solid #fff;}
