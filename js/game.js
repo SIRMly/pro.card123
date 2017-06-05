@@ -45,7 +45,6 @@ $(function(){
         for(var i in imgs){
             var newImg = new Image();
             newImg.src = imgs[i];
-            console.log( newImg.src);
             newImg.onload = function (){
                 proNum++;
                 if(proNum>=count){
