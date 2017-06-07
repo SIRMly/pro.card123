@@ -5,12 +5,13 @@ html{
     text-size-adjust: 100%;
 }
 .page{position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
-#loading{width: 33.7%; position: absolute; left: 33.15%; top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);}
+#progressNum{font-size: 1.8rem; font-weight: bold; color: #e3dd49;
+    position: absolute; left: 50%; top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);}
 /*==page1==*/
 .page1{background: url("../img/page1-bg.jpg") no-repeat bottom center; background-size: cover;}
 #page1-word{width: 20vw; height: 19.5vw;
@@ -57,7 +58,7 @@ html{
 .time-wrapper{width: 42%; height: 29.2vw; font-size: 10vw; text-align: center; padding-top: 13%; position: absolute; top: 0; left: 29%; background: url("../img/timer-bg.png") no-repeat center center;
     -webkit-background-size: contain;
     background-size: contain;}
-#main{width: calc(86.4vw + 16px); margin: 10vh auto 0;}
+#main{width: calc(86.4vw + 16px); margin: 8vh auto 0;}
 .row{display: flex; margin: 5px 0;}
 .box{width: 21.6vw; height: 21.6vw; border-radius: 50%; overflow: hidden;  margin: 0 2px; }
 .card{width: 100%; height: 100%; margin: auto; border-radius: 50%;}
@@ -105,6 +106,55 @@ html{
     -o-transform: rotateY(90deg);
     transform: rotateY(90deg);
 }
+
+#bomb-wrapper{position: absolute; left: 0; bottom: 0; width: 100%; }
+#rope{height: 25vw; width: 77.6vw; background: url("../img/rope.png") no-repeat right center;
+    -webkit-background-size: auto 100%;
+    background-size: auto 100%;; position: absolute; bottom: 0; right: 14vw;}
+#bomb{width: 21.3vw; height: 25vw; position: absolute; bottom: 0; right: 0; background: url("../img/bomb.png") no-repeat;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;}
+#fire{width: 20.5vw; height: 16.7vw; position: absolute; bottom: 11vw; right: 81%; background: url("../img/fire.png") no-repeat;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    -webkit-animation: fireMove 60s linear 3s 1 forwards ;
+    -o-animation: fireMove 60s linear 3s 1 forwards ;
+    animation: fireMove 60s linear 3s 1 forwards ;
+}
+@keyframes fireMove {
+    0%{}
+    5%{transform: translate(10vw,9vw)}
+    8.33%{transform: translate(21vw,8vw);}
+    16.677%{transform: translate(35vw,2vw);}
+    33.3%{transform: translate(54vw,-2vw);}
+    100%{transform: translate(73vw,2vw);}
+
+}
+
+
+
+
+.time-flag{width: 9vw; height: 9vw; position: absolute;
+    -webkit-transition: all 0.3s ;
+    -moz-transition: all 0.3s ;
+    -ms-transition: all 0.3s ;
+    -o-transition: all 0.3s ;
+    transition: all 0.3s ;}
+.flag20{ left: 25%; bottom: 14vw; background: url("../img/20.png") no-repeat center center;
+    -webkit-background-size: contain;
+    background-size: contain;}
+.flag10{ left: 41%; bottom: 5vw;background: url("../img/10.png") no-repeat center center;
+    -webkit-background-size: contain;
+    background-size: contain;}
+.flag5{ left: 60%; bottom: 7vw;background: url("../img/5yuan.png") no-repeat center center;
+    -webkit-background-size: contain;
+    background-size: contain;}
+.flag-hide{width: 0; height: 0; }
+
+
+
+
+
 /*==失败成功==*/
 #crashes{background: rgba(0,0,0,0.5) url("../img/crash-bg.png") no-repeat bottom center;
     -webkit-background-size: contain;

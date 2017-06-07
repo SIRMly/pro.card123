@@ -41,17 +41,21 @@ $(function(){
 
     preload(imgs,proBox);
     function preload(imgs,proBox){
-        var proNum   = 0,
-            count    = imgs.length;
+        var proNum          = 0,
+            count           = imgs.length,
+            proPercentage   = 0;
         for(var i in imgs){
             var newImg = new Image();
             newImg.src = imgs[i];
             newImg.onload = function (){
                 proNum++;
+                proPercentage = Math.floor(proNum/count);
                 if(proNum>=count){
+                    proPercentage=100;
                     proBox.addClass("hide");
                     $(".page1").removeClass("hide");
                 }
+                $("#progressNum").html(proPercentage+"%");
             }
         }
     }
@@ -134,6 +138,7 @@ $(function(){
             this.winTime = 0;
             this.gameOn();
             this.timeBox.html(this.timeText);
+            $(".time-flag").removeClass("flag-hide");
         },
         cardNum : 16,
         doubleNum : 8,
@@ -202,21 +207,23 @@ $(function(){
                                 setTimeout(function (){
                                     $("#crashes,#success").removeClass("hide");
                                     game.winTime = 600-game.time;
-                                    if(game.winTime<=100){
+                                    if(game.winTime<=50){
                                         $("#fail-img").attr({
                                             "src":"img/reward1.png",
                                             "width" : "100%"
                                         });
-                                    }else if (game.winTime<=200){
+                                    }else if (game.winTime<=100){
                                         $("#fail-img").attr({
                                             "src":"img/reward1.png",
                                             "width" : "100%"
                                         });
-                                    }else {
+                                    }else if(game.winTime<=100){
                                         $("#fail-img").attr({
                                             "src":"img/reward1.png",
                                             "width" : "100%"
                                         });
+                                    }else{
+                                        /*==失败==*/
                                     }
                                     $("#yourTime").text((600-game.time)/10+"s");
                                 },500);
@@ -232,19 +239,48 @@ $(function(){
             });
         },
         timeStart : function (){
+            var rope = $("#rope");
+            rope.stop().animate({
+                "width" : "57vw"
+            },5000, function (){
+                rope.stop().animate({
+                    "width" : "41vw"
+                },5000,function (){
+                    rope.stop().animate({
+                        "width" : "21vw"
+                    },10000,function (){
+                        rope.stop().animate({
+                            "width" : "4vw"
+                        },40000)
+                    });
+                });
+            });
             game.timer = setInterval(function (){
+
+
+
+
                 if(game.time>0){
                     game.time--;
                     game.gameText = Math.floor(game.time/10)+ "." + Math.floor(game.time%10) + "s";
                     game.timeBox.html(game.gameText);
+                    if(game.time <= 550){
+                        $(".flag20").addClass("flag-hide");
+                    }
+                    if(game.time <= 500){
+                        $(".flag10").addClass("flag-hide");
+                    }
+                    if(game.time <= 400){
+                        $(".flag5").addClass("flag-hide");
+                    }
                 } else{
                     /*==超时==*/
-                    clearInterval(game.timer);
-                    $("#fail-img").attr({
-                        "src":"img/fail-flag.png",
-                        "width" : "80%"
-                    });
-                    $("#crashes,#fail").removeClass("hide");
+                    //clearInterval(game.timer);
+                    //$("#fail-img").attr({
+                    //    "src":"img/fail-flag.png",
+                    //    "width" : "80%"
+                    //});
+                    //$("#crashes,#fail").removeClass("hide");
                 }
             },100)
         }

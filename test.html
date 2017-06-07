@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>test</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <style>
+        #box{display: flex; width: 500px; height: 100px; justify-content:center;}
+        #box > div{background: url("img/number.png") no-repeat;}
+        .number{width: 10%; height: 100%;}
+        div#point{height: 100%; width: 5%;
+            background-position: 86% 1000%; background-size: 2000% auto;}
+        div#string{height: 100%; width: 10%; background-position: 97% 13%; background-size: 1300% auto;}
+        div#number1{background-position-x: 9%;}
+        div#number2{background-position-x: 18%;}
+        /*
+        0-----1
+        9-----2
+        17-----3
+        26----4
+        34----5
+        42.5----6
+        51---7
+        59----8
+        68----9
+        76----0
+
+
+
+        */
+        div#number3{}
+
+    </style>
+</head>
+<body>
+
+<div id="box" class="clearfix">
+    <div class="number" id="number1"></div>
+    <div class="number" id="number2"></div>
+    <div id="point"></div>
+    <div class="number" id="number3"></div>
+    <div id="string"></div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script>
+    $(function (){
+        var time = 600,
+                number1 = 6,
+                number2 = 0,
+                number3 = 0;
+        var array = [
+                76,0,9,17,26,34,42.5,51,59,68,76
+        ];
+        var timer = setInterval(function (){
+            if(time <= 0){
+                clearInterval(timer);
+            }else{
+                time--;
+                number1 = Math.floor(time/100);
+                number2 = Math.floor((time-number1*100)/10);
+                number3 = time-(Math.floor(time/10)*10);
+                $("#number1").css("background-position-x",array[number1]+"%");
+                $("#number2").css("background-position-x",array[number2]+"%");
+                $("#number3").css("background-position-x",array[number3]+"%");
+
+
+            }
+//            console.log(time+"//"+number1+"//"+number2+"//"+number3)
+        },100);
+    });
+
+
+    /*1. 是gif图本身的问题,但是重新给的图不要太大,loading本来就是用来图片加载的,别反而loading的图是最大的
+     2. 给设计图就行
+     3.简单
+     4. 给设计图..
+     5.*/
+
+</script>
+</body>
+</html>
