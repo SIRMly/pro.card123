@@ -137,14 +137,24 @@ $(function(){
             this.timeText = "60.0s";
             this.winTime = 0;
             this.gameOn();
-            this.timeBox.html(this.timeText);
+            game.number1Dom.css("background-position-x",game.numberArray[game.number1]+"%");
+            game.number2Dom.css("background-position-x",game.numberArray[game.number2]+"%");
+            game.number3Dom.css("background-position-x",game.numberArray[game.number3]+"%");
             $(".time-flag").removeClass("flag-hide");
+            $("#rope").css("width","77.6vw");
+            $("#fire").css("transform","translate(0,0)");
         },
+        number1Dom : $("#number1"),
+        number2Dom : $("#number2"),
+        number3Dom : $("#number3"),
+        number1 : 6,
+        number2 : 0,
+        number3 : 0,
+        numberArray : [87,1,10.5,20,29.5,39,48.5,58,67.5,77.5],
         cardNum : 16,
         doubleNum : 8,
         cards : $(".card"),
         pics : $(".pic"),
-        timeBox : $(".title-time"),
         failArr: [],
         gameOn : function (){
             /*==图片数组==*/var that = this;
@@ -205,25 +215,34 @@ $(function(){
                             if(game.successNum==game.doubleNum){
                                 clearInterval(game.timer);
                                 setTimeout(function (){
-                                    $("#crashes,#success").removeClass("hide");
                                     game.winTime = 600-game.time;
-                                    if(game.winTime<=50){
-                                        $("#fail-img").attr({
-                                            "src":"img/reward1.png",
-                                            "width" : "100%"
-                                        });
-                                    }else if (game.winTime<=100){
-                                        $("#fail-img").attr({
-                                            "src":"img/reward1.png",
-                                            "width" : "100%"
-                                        });
-                                    }else if(game.winTime<=100){
-                                        $("#fail-img").attr({
-                                            "src":"img/reward1.png",
-                                            "width" : "100%"
-                                        });
+                                    if(game.winTime<=200){
+                                        $("#crashes,#success").removeClass("hide");
+                                        if(game.winTime<=50){
+                                            $("#fail-img").attr({
+                                                "src":"img/reward1.png",
+                                                "width" : "100%"
+                                            });
+                                        }else if (game.winTime<=100){
+                                            $("#fail-img").attr({
+                                                "src":"img/reward1.png",
+                                                "width" : "100%"
+                                            });
+                                        }else(game.winTime<=200)
+                                        {
+                                            $("#fail-img").attr({
+                                                "src": "img/reward1.png",
+                                                "width": "100%"
+                                            });
+                                        }
                                     }else{
                                         /*==失败==*/
+                                        $("#fail-img").attr({
+                                            "src":"img/fail-flag.png",
+                                            "width" : "100%"
+                                        });
+                                        $("#crashes,#fail").removeClass("hide");
+
                                     }
                                     $("#yourTime").text((600-game.time)/10+"s");
                                 },500);
@@ -256,14 +275,15 @@ $(function(){
                 });
             });
             game.timer = setInterval(function (){
-
-
-
-
                 if(game.time>0){
                     game.time--;
+                    game.number1 = Math.floor(game.time/100);
+                    game.number2 = Math.floor((game.time-game.number1*100)/10);
+                    game.number3 = game.time-(Math.floor(game.time/10)*10);
+                    game.number1Dom.css("background-position-x",game.numberArray[game.number1]+"%");
+                    game.number2Dom.css("background-position-x",game.numberArray[game.number2]+"%");
+                    game.number3Dom.css("background-position-x",game.numberArray[game.number3]+"%");
                     game.gameText = Math.floor(game.time/10)+ "." + Math.floor(game.time%10) + "s";
-                    game.timeBox.html(game.gameText);
                     if(game.time <= 550){
                         $(".flag20").addClass("flag-hide");
                     }
