@@ -195,7 +195,8 @@ div#string{height: 100%; width: 15%; background-position: 99.5% 83%; background-
 #rewardWay{width: 39.7vw; height: 11.4vw; display: block; margin: 0 auto 2vw; background: url("../img/way.png") no-repeat;
     -webkit-background-size: contain;
     background-size: contain;}
-#fail-flag{width: 60vw; height: 57vw; margin: 0 auto; text-align: center;}
+#fail-flag{width: 60vw; height: 57vw; margin: 0 auto; text-align: center; position: relative; font-size: 0;}
+#reward-number{position: absolute; left: 0; bottom: 4vw; width: 100%; height: 15.86vw; line-height: 15vw; color: #100f12; font-weight: bold; font-size: 1.2rem;}
 #continue-btn{background: url("../img/continue-btn.png") no-repeat center center;
     -webkit-background-size: 100% 100%;
     background-size: 100% 100%;}

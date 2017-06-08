@@ -232,6 +232,7 @@ $(function(){
                                     game.winTime = 600-game.time;
                                     if(game.winTime<=200){
                                         $("#rewardWay").removeClass("hide");
+                                        $("#reward-number").removeClass("hide");
                                         $("#crashes,#success").removeClass("hide");
                                         if(game.winTime<=50){
                                             $("#fail-img").attr({
@@ -257,6 +258,7 @@ $(function(){
                                             "width" : "100%"
                                         });
                                         $("#rewardWay").addClass("hide");
+                                        $("#reward-number").addClass("hide");
                                         $("#crashes,#fail").removeClass("hide");
 
                                     }
@@ -320,6 +322,7 @@ $(function(){
                         "width" : "80%"
                     });
                     $("#rewardWay").addClass("hide");
+                    $("#reward-number").addClass("hide");
                     $("#crashes,#fail").removeClass("hide");
                 }
             },100)
