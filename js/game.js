@@ -4,9 +4,6 @@
 
 $(function(){
     var click = "ontouchstart" in document.documentElement ? "touchstart" : "click";
-    //document.ontouchmove = function (e){
-    //    e.preventDefault();
-    //};
     var imgs = [
         "img/0.png",
         "img/1.png",
@@ -43,7 +40,8 @@ $(function(){
         "img/state.png",
         "img/success-flag.png",
         "img/time-num.png",
-        "img/timer-bg.png"
+        "img/timer-bg.png",
+        "img/rules.png"
     ];
     var proBox = $("#progress");
     var pages = $(".page");
@@ -69,6 +67,11 @@ $(function(){
             }
         }
     }
+    $("#rules").on(click, function (){
+        $(this).empty().remove();
+        $("#page1-btn").addClass("page1-btn-move");
+        $("#page1-word").addClass("page1-word-move");
+    });
     var tab = $(".tab"),
         tabShow = $(".tab-show");
     tab.each(function (index,item){
