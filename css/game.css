@@ -220,7 +220,8 @@ div#string{height: 100%; width: 15%; background-position: 99.5% 83%; background-
 #state{margin-top: 10%;}
 #state{width: 82vw;}
 #list-wrapper > p{margin: 1rem 0 0.2rem 0.5rem;}
-#list-wrapper > table{width: 100vw; text-align: center; vertical-align: middle;}
+#list-wrapper > table{width: 100%; text-align: center; vertical-align: middle;}
+#list-wrapper table td{white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 26vw;}
 #list-wrapper thead tr{height: 10vw;}
 #list-wrapper tbody tr{border-bottom: 1px solid #fff;height: 13vw;}
 #list-wrapper img{width: 10vw;}
