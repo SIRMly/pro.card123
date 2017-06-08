@@ -192,9 +192,6 @@ div#string{height: 100%; width: 15%; background-position: 99.5% 83%; background-
     background-size: 100% 100%;}
 /*==fail==*/
 #fail{position: absolute; width: 100%; bottom: 17%;}
-#rewardWay{width: 39.7vw; height: 11.4vw; display: block; margin: 0 auto 2vw; background: url("../img/way.png") no-repeat;
-    -webkit-background-size: contain;
-    background-size: contain;}
 #fail-flag{width: 60vw; height: 57vw; margin: 0 auto; text-align: center; position: relative; font-size: 0;}
 #reward-number{position: absolute; left: 0; bottom: 4vw; width: 100%; height: 15.86vw; line-height: 15vw; color: #100f12; font-weight: bold; font-size: 1.2rem;}
 #continue-btn{background: url("../img/continue-btn.png") no-repeat center center;
@@ -218,7 +215,9 @@ div#string{height: 100%; width: 15%; background-position: 99.5% 83%; background-
 .tab+.tab a{border-left: 1px solid #fff;}
 .tab.active:before{position: absolute; width: 70%; content: ""; left: 15%; bottom: 0; height: 0; border: 1px solid #fff;}
 .tab.active:after{position: absolute; content: ""; width: 0; height: 0; left: 50%; margin-left: -6px; bottom: 0;  border: 6px solid transparent; border-color: transparent transparent #fff transparent;}
-#state{margin-top: 12%;}
+.tab-shows{height: calc(100vh - 8rem); overflow: hidden; margin-top: 1vh;}
+.tab-show{height: 100%; overflow-y: scroll;}
+#state{margin-top: 10%;}
 #state{width: 82vw;}
 #list-wrapper > p{margin: 1rem 0 0.2rem 0.5rem;}
 #list-wrapper > table{width: 100vw; text-align: center; vertical-align: middle;}
@@ -227,18 +226,13 @@ div#string{height: 100%; width: 15%; background-position: 99.5% 83%; background-
 #list-wrapper img{width: 10vw;}
 
 .ticket{border: 3px solid #fff; width: 94%; margin: 1.5rem auto 0; border-radius: 6px; overflow: hidden; position: relative;}
-.ticket-link{display: block; font-weight: normal; border-bottom: 1px dashed #fff; padding: 1.2rem 0.8rem 1.2rem 1rem;}
-.link-big{font-size: 1.5rem;}
-.link-middle{font-size: 1rem; margin-top: 1rem;}
-.link-icon{width: 2.5rem; height: 2.5rem; position: absolute; right: 0; top: 2rem; background: url("../img/arrow.png") no-repeat center center;
-    -webkit-background-size: 100% 100%;
-    background-size: 100% 100%; }
-.ticket-p{padding: 0 1rem; height: 2.2rem; line-height: 2.2rem; color: #d87603;}
-
-
-
-
-
+.ticket-link{display: block; font-weight: normal; }
+.link-big{font-size: 1.5rem; padding-left: 1rem; height: 3rem; line-height: 4rem;}
+.link-middle{font-size: 1rem; margin-top: 1rem; padding-left: 1rem; height: 2.5rem; line-height: 2rem;}
+/*.link-icon{width: 2.5rem; height: 2.5rem; position: absolute; right: 0; top: 2rem; background: url("../img/arrow.png") no-repeat center center;*/
+    /*-webkit-background-size: 100% 100%;*/
+    /*background-size: 100% 100%; }*/
+.ticket-p{padding-left: 1rem; height: 2.5rem; line-height: 2.5rem; color: #ffc000; font-weight: bold; border-top: 1px dashed #fff; }
 
 
 

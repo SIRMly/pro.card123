@@ -43,8 +43,7 @@ $(function(){
         "img/state.png",
         "img/success-flag.png",
         "img/time-num.png",
-        "img/timer-bg.png",
-        "img/way.png"
+        "img/timer-bg.png"
     ];
     var proBox = $("#progress");
     var pages = $(".page");
@@ -231,7 +230,6 @@ $(function(){
                                 setTimeout(function (){
                                     game.winTime = 600-game.time;
                                     if(game.winTime<=200){
-                                        $("#rewardWay").removeClass("hide");
                                         $("#reward-number").removeClass("hide");
                                         $("#crashes,#success").removeClass("hide");
                                         if(game.winTime<=50){
@@ -257,7 +255,6 @@ $(function(){
                                             "src":"img/fail-flag.png",
                                             "width" : "100%"
                                         });
-                                        $("#rewardWay").addClass("hide");
                                         $("#reward-number").addClass("hide");
                                         $("#crashes,#fail").removeClass("hide");
 
@@ -321,7 +318,6 @@ $(function(){
                         "src":"img/fail-flag.png",
                         "width" : "80%"
                     });
-                    $("#rewardWay").addClass("hide");
                     $("#reward-number").addClass("hide");
                     $("#crashes,#fail").removeClass("hide");
                 }
