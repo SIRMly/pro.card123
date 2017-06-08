@@ -16,8 +16,13 @@ $(function(){
         "img/5.png",
         "img/6.png",
         "img/7.png",
+        "img/5yuan.png",
+        "img/10.png",
+        "img/20.png",
         "img/again-btn.png",
         "img/arrow.png",
+        "img/bomb.png",
+        "img/fire.png",
         "img/concern-btn.png",
         "img/continue-btn.png",
         "img/crash-bg.png",
@@ -30,10 +35,16 @@ $(function(){
         "img/page1-word.png",
         "img/pic.png",
         "img/rank-btn.png",
+        "img/reward1.png",
+        "img/reward2.png",
+        "img/reward3.png",
         "img/reward-btn.png",
+        "img/rope.png",
         "img/state.png",
         "img/success-flag.png",
-        "img/timer-bg.png"
+        "img/time-num.png",
+        "img/timer-bg.png",
+        "img/way.png"
     ];
     var proBox = $("#progress");
     var pages = $(".page");
@@ -49,7 +60,7 @@ $(function(){
             newImg.src = imgs[i];
             newImg.onload = function (){
                 proNum++;
-                proPercentage = Math.floor(proNum/count);
+                proPercentage = Math.floor(proNum/count*100);
                 if(proNum>=count){
                     proPercentage=100;
                     proBox.addClass("hide");
@@ -137,19 +148,22 @@ $(function(){
             this.timeText = "60.0s";
             this.winTime = 0;
             this.gameOn();
+            this.number1=6;
+            this.number2=0;
+            this.number3=0;
             game.number1Dom.css("background-position-x",game.numberArray[game.number1]+"%");
             game.number2Dom.css("background-position-x",game.numberArray[game.number2]+"%");
             game.number3Dom.css("background-position-x",game.numberArray[game.number3]+"%");
             $(".time-flag").removeClass("flag-hide");
-            $("#rope").css("width","77.6vw");
-            $("#fire").css("transform","translate(0,0)");
+            $("#rope").css({
+                "width" : "77.6vw",
+                "transition" : "width 0s"
+            });
+            $("#fire").removeClass("fireMove").css("transform","translate(0,0)");
         },
         number1Dom : $("#number1"),
         number2Dom : $("#number2"),
         number3Dom : $("#number3"),
-        number1 : 6,
-        number2 : 0,
-        number3 : 0,
         numberArray : [87,1,10.5,20,29.5,39,48.5,58,67.5,77.5],
         cardNum : 16,
         doubleNum : 8,
@@ -217,6 +231,7 @@ $(function(){
                                 setTimeout(function (){
                                     game.winTime = 600-game.time;
                                     if(game.winTime<=200){
+                                        $("#rewardWay").removeClass("hide");
                                         $("#crashes,#success").removeClass("hide");
                                         if(game.winTime<=50){
                                             $("#fail-img").attr({
@@ -225,13 +240,13 @@ $(function(){
                                             });
                                         }else if (game.winTime<=100){
                                             $("#fail-img").attr({
-                                                "src":"img/reward1.png",
+                                                "src":"img/reward2.png",
                                                 "width" : "100%"
                                             });
                                         }else(game.winTime<=200)
                                         {
                                             $("#fail-img").attr({
-                                                "src": "img/reward1.png",
+                                                "src": "img/reward3.png",
                                                 "width": "100%"
                                             });
                                         }
@@ -241,6 +256,7 @@ $(function(){
                                             "src":"img/fail-flag.png",
                                             "width" : "100%"
                                         });
+                                        $("#rewardWay").addClass("hide");
                                         $("#crashes,#fail").removeClass("hide");
 
                                     }
@@ -259,21 +275,7 @@ $(function(){
         },
         timeStart : function (){
             var rope = $("#rope");
-            rope.stop().animate({
-                "width" : "57vw"
-            },5000, function (){
-                rope.stop().animate({
-                    "width" : "41vw"
-                },5000,function (){
-                    rope.stop().animate({
-                        "width" : "21vw"
-                    },10000,function (){
-                        rope.stop().animate({
-                            "width" : "4vw"
-                        },40000)
-                    });
-                });
-            });
+            $("#fire").addClass("fireMove");
             game.timer = setInterval(function (){
                 if(game.time>0){
                     game.time--;
@@ -284,23 +286,41 @@ $(function(){
                     game.number2Dom.css("background-position-x",game.numberArray[game.number2]+"%");
                     game.number3Dom.css("background-position-x",game.numberArray[game.number3]+"%");
                     game.gameText = Math.floor(game.time/10)+ "." + Math.floor(game.time%10) + "s";
+                    rope.css({
+                        "width" : "57vw",
+                        "transition" : "width 5s linear"
+                    });
                     if(game.time <= 550){
                         $(".flag20").addClass("flag-hide");
+                        rope.css({
+                            "width" : "41vw",
+                            "transition" : "width 5s linear"
+                        });
                     }
                     if(game.time <= 500){
                         $(".flag10").addClass("flag-hide");
+                        rope.css({
+                            "width" : "21vw",
+                            "transition" : "width 10s linear"
+                        });
                     }
                     if(game.time <= 400){
+                        $(".flag10").addClass("flag-hide");
+                        rope.css({
+                            "width" : "4vw",
+                            "transition" : "width 40s linear"
+                        });
                         $(".flag5").addClass("flag-hide");
                     }
                 } else{
                     /*==超时==*/
-                    //clearInterval(game.timer);
-                    //$("#fail-img").attr({
-                    //    "src":"img/fail-flag.png",
-                    //    "width" : "80%"
-                    //});
-                    //$("#crashes,#fail").removeClass("hide");
+                    clearInterval(game.timer);
+                    $("#fail-img").attr({
+                        "src":"img/fail-flag.png",
+                        "width" : "80%"
+                    });
+                    $("#rewardWay").addClass("hide");
+                    $("#crashes,#fail").removeClass("hide");
                 }
             },100)
         }

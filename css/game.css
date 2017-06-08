@@ -125,10 +125,11 @@ div#string{height: 100%; width: 15%; background-position: 99.5% 83%; background-
 #fire{width: 20.5vw; height: 16.7vw; position: absolute; bottom: 11vw; right: 81%; background: url("../img/fire.png") no-repeat;
     -webkit-background-size: 100% 100%;
     background-size: 100% 100%;
-    -webkit-animation: fireMove 60s linear 3s 1 forwards ;
-    -o-animation: fireMove 60s linear 3s 1 forwards ;
-    animation: fireMove 60s linear 3s 1 forwards ;
+
 }
+.fireMove{ -webkit-animation: fireMove 60s linear 0s 1 forwards ;
+    -o-animation: fireMove 60s linear 0s 1 forwards ;
+    animation: fireMove 60s linear 0s 1 forwards ;}
 @keyframes fireMove {
     0%{}
     5%{transform: translate(10vw,9vw)}
@@ -191,6 +192,9 @@ div#string{height: 100%; width: 15%; background-position: 99.5% 83%; background-
     background-size: 100% 100%;}
 /*==fail==*/
 #fail{position: absolute; width: 100%; bottom: 17%;}
+#rewardWay{width: 39.7vw; height: 11.4vw; display: block; margin: 0 auto 2vw; background: url("../img/way.png") no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;}
 #fail-flag{width: 60vw; height: 57vw; margin: 0 auto; text-align: center;}
 #continue-btn{background: url("../img/continue-btn.png") no-repeat center center;
     -webkit-background-size: 100% 100%;
